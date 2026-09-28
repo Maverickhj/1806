@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.sites-runtime/
+.venv/
+.runtime/
+.jupyter/
+.openai/
+dist/materials/
+dist/content.json
+dist/downloads/

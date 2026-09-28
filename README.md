@@ -13,6 +13,14 @@ Catalog Description: *Basic subject on matrix theory and linear algebra, emphasi
 
 **Detailed lecture notes are posted on Canvas (accessible only to registered students).**
 
+## 本地学习路线与 Lab
+
+- [学习路线](learning-roadmap.md)：课程结构与学习顺序。
+- [行动 Roadmap](action-roadmap.md)：14 次学习任务、具体练习与验收要求。
+- [18.06 学习 Lab](lab/README.md)：本地网页学习室，支持 Python / NumPy 实验，以及通过 Jupyter Server + Julia 内核编辑、运行和保存原始 notebook。
+
+首次安装请按 [Lab README](lab/README.md) 准备环境；完成后从仓库根目录运行 `./lab/start.sh`，打开 <http://127.0.0.1:4186/learn/>。Notebook 修改保存在 `notes/` 的原文件中；路线页面的笔记和进度保存在当前浏览器。Lab 是本仓库的学习辅助工具，非 MIT 官方课程平台。
+
 ## Lecture Material and Summaries
 
 ### Lecture 1 (Mon Feb 3 2025)

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>18.06 · 线性代数学习室</title>
+<meta name="description" content="跟着 14 次学习路线，读懂线性代数、动手修改并运行 Python 与 NumPy 实验。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e40af'/%3E%3Cpath d='M11 7H7v18h4M21 7h4v18h-4' fill='none' stroke='white' stroke-width='2'/%3E%3Ccircle cx='14' cy='13' r='2' fill='%2393c5fd'/%3E%3Ccircle cx='19' cy='20' r='2' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vendor/katex.min.css"><link rel="stylesheet" href="style.css">
+<script defer src="vendor/marked.umd.js"></script><script defer src="vendor/purify.min.js"></script><script defer src="vendor/katex.min.js"></script><script defer src="vendor/auto-render.min.js"></script>
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#lesson-title">跳到学习内容</a>
+<aside id="sidebar">
+  <a class="brand" href="#T00"><span class="brand-mark">[A]</span><span>线性代数学习室<small>MIT 18.06 · 学习伴侣</small></span></a>
+  <div class="course-label">你的学习路线 <span>14 次 + 综合验收</span></div>
+  <div class="course-progress"><span id="progress-text">0 / 14 次完成</span><span id="progress-percent">0%</span></div>
+  <progress id="progress" value="0" max="14" aria-label="课程完成进度"></progress>
+  <nav id="lesson-nav" aria-label="课程任务"></nav>
+  <div class="sidebar-bottom"><span class="device-icon">◉</span><span>学习记录保存在此浏览器<small id="save-status">无需安装 Python 或 Jupyter</small></span></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><button id="menu" class="icon-button" aria-label="展开课程目录" aria-expanded="false">☰</button><div class="breadcrumb">18.06 <span>/</span> <span id="group-name">准备</span></div><button id="open-native" class="secondary">原始 notebook · 编辑运行</button><a href="downloads/action-roadmap.md" download class="text-link">下载完整路线 ↗</a></header>
+<section id="native-workspace" hidden aria-label="原始 notebook 编辑器">
+  <div class="native-title"><div><h1>原始 notebook 工作台</h1><p id="native-connection">正在检测本地 Jupyter…</p></div><button id="native-back" class="secondary">← 返回学习路线</button></div>
+  <div class="native-picker"><label for="native-file">课程文件</label><select id="native-file" aria-label="选择原始 notebook"></select><button id="native-open" class="primary" disabled>打开文件</button><span id="native-count"></span></div>
+  <div class="native-actions"><button id="native-run" class="primary" disabled>▷ 运行选中单元格</button><button id="native-interrupt" class="secondary" disabled>中断运行</button><button id="native-save" class="secondary" disabled>保存当前文档</button><a id="native-new-tab" href="/lab" target="_blank" rel="noopener noreferrer">独立窗口 ↗</a></div>
+  <p class="native-hint">直接编辑 <code>1806/notes/</code> 下的原文件。Jupyter 自动保存，也可手动保存；旧版本示例可能需要更新语法或依赖。内核请选择 <strong>Julia 18.06</strong>。</p>
+  <div id="native-status" role="status" aria-live="polite">选择一个 notebook 开始。</div>
+  <iframe id="native-frame" title="本地 JupyterLab notebook 编辑器" allow="clipboard-read; clipboard-write"></iframe>
+</section>
+<main id="main">
+  <section class="lesson-column" aria-label="学习材料">
+    <div class="lesson-meta"><span id="lesson-id" class="tag">T00</span><span id="duration">60–90 分钟</span><span>阅读 · 手算 · 实验</span></div>
+    <h1 id="lesson-title" tabindex="-1">加载学习内容…</h1><p id="lesson-lead" class="lead"></p>
+    <div id="tabs" class="tabs" role="tablist" aria-label="学习视图"><button role="tab" id="tab-learn" aria-controls="panel-learn" aria-selected="true" data-tab="learn">本次学习</button><button role="tab" id="tab-materials" aria-controls="panel-materials" aria-selected="false" tabindex="-1" data-tab="materials">课程材料 <span id="material-count"></span></button></div>
+    <div id="panel-learn" role="tabpanel" aria-labelledby="tab-learn">
+      <div class="concept"><div class="eyebrow">关键理解</div><div id="formula"></div><div id="concept-text" class="prose"></div></div>
+      <div class="section-heading"><h2>本次任务</h2><span id="task-count"></span></div><div id="task-list"></div>
+      <div class="challenge"><div class="eyebrow">改一改，想一想</div><p id="challenge-text"></p></div>
+      <details class="detail"><summary>阅读安排与验收标准</summary><div id="lesson-detail" class="prose"></div></details>
+      <label class="notes-label" for="notes">我的理解与问题 <span>只保存在此浏览器</span></label><textarea id="notes" rows="3" placeholder="试着用自己的话解释今天的概念，再记下一个问题。"></textarea>
+      <div class="lesson-footer"><button id="complete" class="primary">我已掌握本次内容</button><button id="next" class="secondary">下一次 →</button></div>
+    </div>
+    <div id="panel-materials" role="tabpanel" aria-labelledby="tab-materials" hidden><p class="material-note">原课程 notebook 使用 Julia。可在这里阅读，或点击“编辑并运行原文件”进入本地编辑器；右侧仍是 Python 练习。</p><div id="material-list"></div><details class="detail"><summary>本次 Lecture 摘要（英文原文）</summary><div id="lecture-content" class="prose"></div></details><details class="detail"><summary>原材料的已知笔误与阅读提示</summary><div id="corrections" class="prose"></div></details><div id="notebook-reader" class="prose"></div></div>
+  </section>
+  <section class="lab-column" aria-label="Python 实验">
+    <div class="lab-header"><div><span class="lab-icon">⌘</span><strong>动手实验</strong><span class="python-label">Python · NumPy</span></div><button id="download" class="text-button" title="下载含讲解和当前代码的 Jupyter notebook">下载 .ipynb ↗</button></div>
+    <div class="runtime-row"><span id="runtime-status">首次运行时加载 Python 环境</span><span class="local-label">在浏览器中运行</span></div>
+    <div class="editor-toolbar"><span id="code-filename">T00.py</span><button id="reset-code" class="text-button">恢复示例</button></div>
+    <div class="editor-wrap"><div id="line-numbers" aria-hidden="true">1</div><textarea id="code-editor" aria-label="Python 代码编辑器" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off"></textarea></div>
+    <div class="run-toolbar"><span class="shortcut">Ctrl / ⌘ + Enter 运行 · Tab 缩进</span><div><button id="stop" class="secondary" disabled>停止</button><button id="run" class="primary"><span aria-hidden="true">▷</span> 运行代码</button></div></div>
+    <div class="output-heading"><strong>运行结果</strong><span id="run-time">尚未运行</span></div>
+    <div id="output" tabindex="0" aria-label="Python 输出"><div class="empty-output"><span>[ ]</span><p>先预测，再验证。</p><small>修改上方代码，点击「运行代码」查看真实结果。</small></div></div>
+    <div id="run-announcement" class="sr-only" role="status" aria-live="polite"></div>
+    <div class="runtime-help">支持 NumPy 与 Matplotlib 绘图。优先使用完整的本地运行环境，否则需联网加载；首次初始化可能需要稍等，每次运行从新的变量空间开始。</div>
+  </section>
+</main>
+<footer class="page-footer">依据本地 MIT 18.06 课程材料整理 · Python 练习为学习改编，非官方课程网站</footer>
+</div>
+<dialog id="confirm-reset"><h2>恢复本次示例代码？</h2><p>当前编辑内容将被示例替换。可以先下载 notebook 留存。</p><div><button id="cancel-reset" class="secondary">保留编辑</button><button id="confirm-reset-button" class="primary">恢复示例</button></div></dialog>
+<script nomodule>document.getElementById('lesson-title').textContent='请使用支持现代 JavaScript 的浏览器。';</script>
+</body></html>

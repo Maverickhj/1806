@@ -1,0 +1,2 @@
+@font-face{font-family:"Course Chinese";src:url("vendor/noto-sc-full.ttf") format("truetype");font-weight:100 900;font-display:swap}
+:root{--jp-ui-font-family:system-ui,"Course Chinese",sans-serif;--jp-content-font-family:system-ui,"Course Chinese",sans-serif;--jp-code-font-family:monospace,"Course Chinese"}
